@@ -23,7 +23,7 @@
 
 - name: Add cred_helper_config to docker config json object
   set_fact:
-    result_var: "{{ original_content | combine(cred_helper_config | to_json | from_json) }}"
+    result_var: "{{ cred_helper_config | to_json | from_json }}"
 
 - name: Write merged content to config file
   copy:
